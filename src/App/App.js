@@ -4,6 +4,10 @@ import 'firebase/auth';
 
 import Auth from '../components/pages/Auth/Auth';
 import Navbar from '../components/pages/Navbar/Navbar';
+import EditBirb from '../components/pages/EditBirb/EditBirb';
+import Home from '../components/pages/Home/Home';
+import NewBirb from '../components/pages/NewBirb/NewBirb';
+import SingleBirb from '../components/pages/SingleBirb/SingleBirb';
 
 import fbConnection from '../helpers/data/connection';
 
@@ -36,6 +40,10 @@ class App extends React.Component {
         <h2>BIRB WATCHER</h2>
         <Navbar />
         <Auth />
+        <EditBirb />
+        <Home />
+        <NewBirb />
+        <SingleBirb />
       </div>
     );
   }
