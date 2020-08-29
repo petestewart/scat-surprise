@@ -6,7 +6,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import Auth from '../components/pages/Auth/Auth';
-import Navbar from '../components/pages/Navbar/Navbar';
+import MyNavbar from '../components/pages/Navbar/Navbar';
 import EditBirb from '../components/pages/EditBirb/EditBirb';
 import Home from '../components/pages/Home/Home';
 import NewBirb from '../components/pages/NewBirb/NewBirb';
@@ -57,7 +57,7 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <React.Fragment>
-            <Navbar />
+            <MyNavbar authed={authed} />
             <div className="container">
               <Switch>
                 <PrivateRoute path="/home" component={Home} authed={authed} />
