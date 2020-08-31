@@ -1,0 +1,10 @@
+.AllBirds {
+  width: 100vw;
+
+  .birdList {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+}

@@ -4,15 +4,19 @@ import {
   CardTitle, CardSubtitle, Button,
 } from 'reactstrap';
 
+import './Bird.scss';
+
 const Bird = (props) => {
   const { bird } = props;
 
+  const { color } = bird;
+
   return (
-    <div>
-      <Card>
+    <div className="Bird">
+      <Card className="card">
         <CardBody>
-          <CardTitle>{bird.type}</CardTitle>
-          <CardSubtitle>{bird.color}, {bird.size}</CardSubtitle>
+          <CardTitle><h4>{bird.type}</h4></CardTitle>
+          <CardSubtitle className="CardSubtitle"><span style={{ color }}>{bird.color}</span>, {bird.size}</CardSubtitle>
           <CardText>
             <ul>
             <li>seen at: {bird.seenAt}</li>

@@ -2,6 +2,8 @@ import React from 'react';
 
 import Bird from '../Bird/Bird';
 
+import './AllBirds.scss';
+
 const AllBirds = (props) => {
   const birdCards = (allBirds) => {
     const birdList = allBirds.map((bird) => <Bird bird={bird} />);
@@ -9,10 +11,12 @@ const AllBirds = (props) => {
   };
 
   return (
-    <>
+    <div className="AllBirds">
       <h1>All Birds</h1>
-      {birdCards(props.birds)}
-    </>
+      <div className="birdList">
+        {birdCards(props.birds)}
+      </div>
+    </div>
   );
 };
 
