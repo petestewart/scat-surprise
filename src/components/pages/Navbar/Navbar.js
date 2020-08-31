@@ -13,6 +13,8 @@ import {
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import './Navbar.scss';
+
 class MyNavbar extends React.Component {
   static propTypes = {
     authed: PropTypes.bool.isRequired,
