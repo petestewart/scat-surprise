@@ -1,9 +1,11 @@
 import React from 'react';
 import {
   Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button,
+  CardTitle, CardSubtitle,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
+import birdShape from '../../../helpers/propz/birdShape';
 
 import './Bird.scss';
 
@@ -18,17 +20,10 @@ const Bird = (props) => {
   return (
     <div className="Bird">
       <Card className="card">
-        <CardBody>
-          <CardTitle><h4>{bird.type}</h4></CardTitle>
-          <CardSubtitle className="CardSubtitle"><span style={{ color }}>{bird.color}</span>, {bird.size}</CardSubtitle>
+        <CardBody style={{ border: `15px solid ${color}` }}>
+          <CardTitle><h4 >{bird.type}</h4></CardTitle>
+          <CardSubtitle className="CardSubtitle"></CardSubtitle>
           <CardText>
-            <ul>
-            <li>seen at: {bird.seenAt}</li>
-            <li>alternate color: {bird.altColor}</li>
-            <li>{bird.wasSleeping ? 'was sleeping' : 'was awake'}</li>
-            <li>location: {bird.location}</li>
-            <li>notes: {bird.notes}</li>
-            </ul>
             <Link to={singleBirdLink}><i className="fas fa-binoculars mx-4"></i></Link>
             <Link to={editLink}><i className="fas fa-edit mx-4"></i></Link>
           </CardText>
@@ -36,6 +31,10 @@ const Bird = (props) => {
       </Card>
     </div>
   );
+};
+
+Bird.propTypes = {
+  bird: birdShape.birbShape,
 };
 
 export default Bird;

@@ -29,10 +29,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
-        <h2>Home</h2>
-        <button className="btn btn-danger" onClick={this.editBirbEvent}>Edit A Birb</button>
-        <Link to='/new'>New Birb</Link>
-        <Link to='/birbs/birb123456'>Specific Birb</Link>
+
         <AllBirds birds={this.state.birds} />
       </div>
     );
