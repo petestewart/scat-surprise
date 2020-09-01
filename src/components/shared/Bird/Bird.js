@@ -3,6 +3,7 @@ import {
   Card, CardText, CardBody,
   CardTitle, CardSubtitle, Button,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import './Bird.scss';
 
@@ -10,6 +11,9 @@ const Bird = (props) => {
   const { bird } = props;
 
   const { color } = bird;
+
+  const singleBirdLink = `/birbs/${bird.id}`;
+  const editLink = `/edit/${bird.id}`;
 
   return (
     <div className="Bird">
@@ -25,8 +29,9 @@ const Bird = (props) => {
             <li>location: {bird.location}</li>
             <li>notes: {bird.notes}</li>
             </ul>
+            <Link to={singleBirdLink}><i className="fas fa-binoculars mx-4"></i></Link>
+            <Link to={editLink}><i className="fas fa-edit mx-4"></i></Link>
           </CardText>
-          <Button>Button</Button>
         </CardBody>
       </Card>
     </div>
