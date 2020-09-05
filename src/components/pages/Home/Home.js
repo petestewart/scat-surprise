@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import AllBirds from '../../shared/AllBirds/AllBirds';
 
@@ -11,10 +11,20 @@ class Home extends React.Component {
     birds: [],
   }
 
+  deleteBird = (birdId) => {
+    birdsData.deleteBird(birdId)
+      .then(() => {
+        birdsData.getBirdsByUid(authData.getUid())
+          .then((birds) => {
+            this.setState({ birds });
+          })
+          .catch((err) => console.error(err));
+      });
+  };
+
   componentDidMount() {
     birdsData.getBirdsByUid(authData.getUid())
       .then((birds) => {
-        console.warn(birds);
         this.setState({ birds });
       })
       .catch((err) => console.error(err));
@@ -29,8 +39,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
-
-        <AllBirds birds={this.state.birds} />
+        <AllBirds birds={this.state.birds} deleteBird={this.deleteBird} />
       </div>
     );
   }

@@ -6,7 +6,7 @@ import './AllBirds.scss';
 
 const AllBirds = (props) => {
   const birdCards = (allBirds) => {
-    const birdList = allBirds.map((bird) => <Bird bird={bird} key={bird.id} />);
+    const birdList = allBirds.map((bird) => <Bird bird={bird} key={bird.id} deleteBird={props.deleteBird} />);
     return birdList;
   };
 

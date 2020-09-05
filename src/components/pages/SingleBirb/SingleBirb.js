@@ -20,8 +20,18 @@ class SingleBirb extends React.Component {
 
   render() {
     const { birb } = this.state;
+
     const date = moment(birb.seenAt).format('MMMM Do YYYY, h:mm:ss a');
     const allBirdsLink = '/home';
+
+    const deleteHandler = () => {
+      const { birbId } = this.props.match.params;
+      birdsData.deleteBird(birbId)
+        .then(() => {
+          this.props.history.push(allBirdsLink);
+        })
+        .catch((err) => console.error(err));
+    };
 
     if (birb.type === 'seahawk') { return <img src="https://thumbs.gfycat.com/WholeDifficultFlies-size_restricted.gif" className="mt-5" style={{ width: '100%' }} alt="BeastMode" />; }
 
@@ -36,6 +46,7 @@ class SingleBirb extends React.Component {
           <span><label>seen at:</label> {date}</span>
           <span><label>location:</label> {birb.location}</span>
           <span>was {birb.wasSleeping ? 'asleep' : 'awake'}</span>
+          <i class="fas fa-trash-alt" onClick={deleteHandler}></i>
         </div>
       </div>
     );

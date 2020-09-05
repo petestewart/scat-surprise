@@ -41,7 +41,6 @@ class NewBirb extends React.Component {
     ];
     const newBirb = _.pick(this.state, keysIWant);
     newBirb.uid = authData.getUid();
-    console.warn(newBirb);
 
     birdsData.createBird(newBirb)
       .then((res) => {
