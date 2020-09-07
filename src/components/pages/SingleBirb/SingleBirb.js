@@ -46,7 +46,7 @@ class SingleBirb extends React.Component {
           <span><label>seen at:</label> {date}</span>
           <span><label>location:</label> {birb.location}</span>
           <span>was {birb.wasSleeping ? 'asleep' : 'awake'}</span>
-          <i class="fas fa-trash-alt" onClick={deleteHandler}></i>
+          <i className="fas fa-trash-alt" onClick={deleteHandler}></i>
         </div>
       </div>
     );

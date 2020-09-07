@@ -13,10 +13,12 @@ const getBirdsByUid = (uid) => new Promise((resolve, reject) => {
 
 const createBird = (newBird) => axios.post(`${baseUrl}/birbs.json`, newBird);
 
+const updateBird = (birdId, updatedBird) => axios.put(`${baseUrl}/birbs/${birdId}.json`, updatedBird);
+
 const getBird = (birdId) => axios.get(`${baseUrl}/birbs/${birdId}.json`);
 
 const deleteBird = (birdId) => axios.delete(`${baseUrl}/birbs/${birdId}.json`);
 
 export default {
-  getBirdsByUid, getBird, createBird, deleteBird,
+  getBirdsByUid, getBird, createBird, deleteBird, updateBird,
 };

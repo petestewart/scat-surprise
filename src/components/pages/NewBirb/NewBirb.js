@@ -19,7 +19,7 @@ class NewBirb extends React.Component {
     notes: '',
   }
 
-  changeTypeEvent = (e) => {
+  changeValueEvent = (e) => {
     this.setState({ [e.target.getAttribute('name')]: e.target.value });
   };
 
@@ -67,7 +67,7 @@ class NewBirb extends React.Component {
          id="birbType"
          placeholder="Type"
          value={type}
-         onChange={this.changeTypeEvent}
+         onChange={this.changeValueEvent}
          />
       </div>
       <div className="form-group">
@@ -79,7 +79,7 @@ class NewBirb extends React.Component {
          id="birbColor"
          placeholder="Color"
          value={color}
-         onChange={this.changeTypeEvent}
+         onChange={this.changeValueEvent}
          />
       </div>
       <div className="form-group">
@@ -91,7 +91,7 @@ class NewBirb extends React.Component {
          id="birbSize"
          placeholder="Size"
          value={size}
-         onChange={this.changeTypeEvent}
+         onChange={this.changeValueEvent}
          />
       </div>
       <div className="form-group">
@@ -103,7 +103,7 @@ class NewBirb extends React.Component {
          id="birbAltColor"
          placeholder="AltColor"
          value={altColor}
-         onChange={this.changeTypeEvent}
+         onChange={this.changeValueEvent}
          />
       </div>
       <div className="form-group">
@@ -115,7 +115,7 @@ class NewBirb extends React.Component {
          id="birbLocation"
          placeholder="Location"
          value={location}
-         onChange={this.changeTypeEvent}
+         onChange={this.changeValueEvent}
          />
       </div>
       <div className="form-check">
@@ -125,7 +125,7 @@ class NewBirb extends React.Component {
          id="birbWasAwake"
          name="isAsleep"
          value={true}
-         onChange={this.changeTypeEvent}
+         onChange={this.changeValueEvent}
          />
          <label htmlFor="birbWasAwake">Was Awake</label>
       </div>
@@ -136,7 +136,7 @@ class NewBirb extends React.Component {
          id="birbWasAsleep"
          name="isAsleep"
          value={false}
-         onChange={this.changeTypeEvent}
+         onChange={this.changeValueEvent}
          />
          <label htmlFor="birbWasAsleep">Was Asleep</label>
       </div>
@@ -149,7 +149,7 @@ class NewBirb extends React.Component {
          id="birbNotes"
          placeholder="Notes"
          value={notes}
-         onChange={this.changeTypeEvent}
+         onChange={this.changeValueEvent}
          />
       </div>
       <div className="form-group">
